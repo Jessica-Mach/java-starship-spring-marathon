@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Vessels</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <h1>Space Vessels</h1>
+  <ul th:each="starShip : ${starShips}" >
+    <a th:href="@{'/starships/' + ${starShip.id}}">
+      <li th:text="${starShip.name} + ' (fuel: ' + ${starShip.fuelCapacity} + ')'"></li>
+    </a>
+  </ul>
+</body>
+</html>

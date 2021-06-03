@@ -1,3 +1,8 @@
+body {
+  width: 90%;
+  margin: 40px 5%;
+}
+
 .blue-header {
   color: blue;
 }
