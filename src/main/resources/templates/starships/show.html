@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Space Vessels</title>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-
+  <h1>Space Vessels</h1>
+  <div th:object="${starShip}">
+    <h3 th:text="'Name of Ship: ' + *{name}"></h3>
+    <p th:text="'Description: ' + *{description}"></p>
+    <p th:text="'Fuel Capacity: ' + ${starShip.getFuelIndicator()} + ' (' + *{fuelCapacity} + ' Teraliters)'"></p>
+  </div>
 </body>
 </html>
