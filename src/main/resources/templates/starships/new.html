@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Space Vessels</title>
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+  <h1>Space Vessels</h1>
+  <h3>Add a New Star Ship</h3>
 
+  <form action="#" th:action="@{/starships}" th:object="${starShip}" method="POST">
+    <div th:class="form-entry">
+      <label th:for="name">Name: </label>
+      <input type="text" th:field="*{name}" />
+    </div>
+    <div th:class="form-entry">
+      <label th:for="description">Description: </label>
+      <input type="text" th:field="*{description}" />
+    </div>
+    <div th:class="form-entry">
+      <label th:for="fuelCapacity">Fuel Capacity: </label>
+      <input type="number" th:field="*{fuelCapacity}" />
+    </div>
+    <div th:class="submit">
+      <input type="submit" value="Add Ship" />
+    </div>
+  </form>
 </body>
 </html>

@@ -1,6 +1,6 @@
 body {
-  width: 90%;
-  margin: 40px 5%;
+  width: 80%;
+  margin: 40px 10%;
 }
 
 .blue-header {
@@ -10,3 +10,27 @@ body {
 .description {
   font-style: italic;
 }
+
+form{
+  margin-top: 48px;
+  padding: 24px;
+  height: 160px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: solid 2px purple;
+  background-color: #F9EFFD;
+}
+
+.form-entry {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit{
+  margin-top: 24px;
+  align-self: center;
+}
+

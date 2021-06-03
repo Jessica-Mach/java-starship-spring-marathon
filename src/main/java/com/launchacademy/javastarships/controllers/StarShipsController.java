@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -44,5 +45,12 @@ public class StarShipsController {
   @GetMapping("/new")
   public String getNew(@ModelAttribute StarShip starShip) {
     return "starships/new";
+  }
+
+  @PostMapping
+  public String createNew(@ModelAttribute StarShip starShip) {
+    starShip.setId(starShipService.findAll().size() + 1);
+    starShipService.addToList(starShip);
+    return "redirect:/starships/" + starShip.getId();
   }
 }
